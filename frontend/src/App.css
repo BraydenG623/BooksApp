@@ -1,0 +1,16 @@
+
+
+
+
+.flex-container {
+    display: flex;
+    justify-content: center; /* Horizontally centers items */
+    align-items: center;   /* Vertically centers items */
+    height: 100vh; /* Example: to center in the viewport */
+  }
+
+  .boldtext {
+    font-weight: bold;
+    text-align: center;
+    font-style: italic;
+  }
