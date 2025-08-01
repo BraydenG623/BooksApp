@@ -5,8 +5,18 @@ import { api } from "../api";
 export default function ReadingListPage() {
   const [books, setBooks] = useState([]);
 
-  async function load() { setBooks(await api("/api/books")); }
-  useEffect(load(), []);
+  async function load() {
+    try {
+      setBooks(await api("/api/books"));
+    } catch (error) {
+      console.error("Failed to load books:", error);
+      
+    }
+  }
+
+  useEffect(() => {
+    load(); 
+  }, []);
 
   async function del(id) {
     await api(`/api/books/${id}`, { method: "DELETE" });
